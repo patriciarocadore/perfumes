@@ -8,36 +8,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
-/* ================= FONTE DO NOME DO PERFUME ================= */
 @font-face {
     font-family: 'NewYork';
     src: url('./FONTES/NewYork.otf') format('opentype');
 }
 
-/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ================= BODY ================= */
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(
-        to bottom,
-        #f6c1a1,
-        #e9a987,
-        #d9926f
-    );
+    background: linear-gradient(to bottom,#f6c1a1,#e9a987,#d9926f);
     min-height: 100vh;
     color: #000;
 }
 
-/* ================= HEADER ================= */
 header {
-    position: relative;
     padding: 3rem 1.5rem 5rem;
     text-align: center;
     border-bottom: 1px solid rgba(120, 53, 15, 0.2);
@@ -50,54 +39,45 @@ header {
 }
 
 .subtitle {
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0,0,0,0.6);
     letter-spacing: 0.4em;
     font-size: 0.75rem;
     text-transform: uppercase;
     margin-bottom: 1rem;
-    font-weight: 300;
 }
 
 .catalogo-titulo {
     margin: 2.5rem auto 2rem;
-    text-align: center;
 }
 
 .catalogo-texto {
     font-size: 1.3rem;
-    font-weight: 300;
     letter-spacing: 0.35em;
     text-transform: uppercase;
-    color: #ffffff;
-    margin: 0.75rem 0;
+    color: #fff;
 }
 
 .catalogo-linha {
     width: 6rem;
     height: 1px;
-    margin: 0 auto;
+    margin: 0.75rem auto;
     background: linear-gradient(to right, transparent, #f59e0b, transparent);
 }
 
-/* ================= BADGE + TAG ================= */
 .badge-container {
     position: relative;
     margin-top: 1.5rem;
 }
 
 .badge-30ml {
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
+    display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
-    border: 1px solid rgba(245, 158, 11, 0.3);
-    background: rgba(245, 158, 11, 0.1);
-    color: #1a1a1a;
+    border: 1px solid rgba(245,158,11,0.3);
+    background: rgba(245,158,11,0.1);
     font-size: 0.875rem;
 }
 
-/* ================= TAG PREÇO ================= */
 .tag-preco {
     position: absolute;
     right: 0;
@@ -107,107 +87,74 @@ header {
     pointer-events: none;
 }
 
-/* ================= DIVIDER ================= */
 .divider {
     width: 6rem;
     height: 1px;
-    background: linear-gradient(to right, transparent, #f59e0b, transparent);
     margin: 2rem auto 0;
+    background: linear-gradient(to right, transparent, #f59e0b, transparent);
 }
 
-/* ================= MAIN ================= */
 main {
     max-width: 80rem;
     margin: 0 auto;
     padding: 4rem 1.5rem;
 }
 
-/* ================= GRID ================= */
 .grid {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 2rem;
+    grid-template-columns: 1fr;
 }
 
 @media (min-width: 640px) {
-    .grid { grid-template-columns: repeat(2, 1fr); }
+    .grid { grid-template-columns: repeat(2,1fr); }
 }
 
 @media (min-width: 1024px) {
-    .grid { grid-template-columns: repeat(3, 1fr); }
+    .grid { grid-template-columns: repeat(3,1fr); }
 }
 
-/* ================= CARD ================= */
 .card {
-    position: relative;
     height: 460px;
     border-radius: 1rem;
-    overflow: hidden;
+    background-color: #0a0a0a;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center bottom;
-    background-color: #0a0a0a;
     border: 1px solid #262626;
+    position: relative;
 }
 
 .card-content {
-    position: absolute;
-    top: 0;
     padding: 1.5rem;
-    z-index: 2;
 }
 
-/* ================= TEXTO DO PERFUME ================= */
 .perfume-name {
-    display: inline-block;
     font-family: 'NewYork', serif;
-    font-size: 1.35rem;
-    color: #000;
     background: #f6c1a1;
     padding: 0.4rem 1.2rem;
     border-radius: 9999px;
+    display: inline-block;
     margin-bottom: 0.75rem;
 }
 
 .perfume-title {
     font-size: 0.9rem;
-    letter-spacing: 0.05em;
-    color: #000;
     margin-bottom: 0.75rem;
 }
 
 .perfume-text {
     font-size: 0.85rem;
     line-height: 1.5;
-    color: #000;
     white-space: pre-line;
 }
 
-/* ================= FOOTER ================= */
 .footer {
     text-align: center;
     padding: 3rem 1rem 2rem;
     color: #737373;
 }
 
-.footer-logo {
-    height: 3.5rem;
-    margin-bottom: 0.75rem;
-    opacity: 0.85;
-}
-
-.footer-text {
-    font-size: 0.85rem;
-    letter-spacing: 0.3em;
-    margin-bottom: 0.5rem;
-}
-
-.footer-copy {
-    font-size: 0.7rem;
-    opacity: 0.6;
-}
-
-/* ================= WHATSAPP ================= */
 .whatsapp {
     position: fixed;
     bottom: 1.5rem;
@@ -217,17 +164,14 @@ main {
     padding: 0.9rem 1.2rem;
     border-radius: 9999px;
     text-decoration: none;
-    font-size: 0.85rem;
-    box-shadow: 0 10px 25px rgba(0,0,0,.35);
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-    <img src="logo.png" alt="JP Perfumes" class="logo">
+    <img src="logo.png" class="logo">
     <p class="subtitle">Coleção Exclusiva</p>
 
     <div class="catalogo-titulo">
@@ -238,9 +182,7 @@ main {
 
     <div class="badge-container">
         <span class="badge-30ml">Frascos de 30ml</span>
-
-        <!-- TAG DE PREÇO -->
-        <img src="./TAG.png" alt="Preço" class="tag-preco">
+        <img src="./TAG.png" class="tag-preco">
     </div>
 
     <div class="divider"></div>
@@ -251,37 +193,51 @@ main {
 </main>
 
 <footer class="footer">
-    <img src="logo.png" alt="JP Perfumes" class="footer-logo">
-    <div class="footer-text">JP PERFUMES</div>
-    <div class="footer-copy">© JP Perfumes — Todos os direitos reservados</div>
+    © JP Perfumes — Todos os direitos reservados
 </footer>
 
-<a class="whatsapp" href="https://wa.me/5562991371589" target="_blank">
-    WhatsApp
-</a>
+<a class="whatsapp" href="https://wa.me/5562991371589" target="_blank">WhatsApp</a>
 
 <script>
-const PERFUMES = [...]; // mantém exatamente sua lista atual
+const PERFUMES = [
+{"id":"01","nome":"COCO01","titulo":"Inspiração: Coco Mademoiselle (CHANEL)","texto":["Família Olfativa: Âmbar Floral Feminino","Notas de saída: Laranja, Tangerina, Bergamota e Flor de Laranjeira;","Notas de corpo: Rosa Turca, Jasmim, Mimosa e Ylang Ylang;","Notas de fundo/fixação: Patchouli ou Oriza, Almíscar Branco, Baunilha, Vetiver, Fava Tonka e Opoponax."]},
+{"id":"02","nome":"LVEB02","titulo":"Inspiração: Oui La Vie est Belle (LANCÔME)","texto":["Família olfativa: Floral Frutado Gourmet Feminino","Notas de saída: Framboesa, Pimenta, Rosa e Bergamota","Notas de corpo: Rosa e Ylang-Ylang","Notas de fundo: Doces, Íris e Patchouli."]},
+{"id":"03","nome":"ROYA03","titulo":"Inspiração: Royal Amber (ORIENTICA)","texto":["Família olfativa: Âmbar Baunilha.","Notas de saída: Bergamota.","Notas de corpo: Notas Doces, Âmbar, Melão e Abacaxi.","Notas de fundo: Notas Amadeiradas, Almíscar e Baunilha."]},
+{"id":"04","nome":"SABA04","titulo":"Inspiração: Sabah Al Ward (AL WATANIAH)","texto":["Família olfativa: Âmbar Floral.","Notas de saída: Pimenta Rosa e Tangerina.","Notas de corpo: Jasmim Sambac, Flor de Laranjeira e Vagem de Cacau.","Notas de fundo: Baunilha, Fava Tonka e Patchouli ou Oriza."]},
+{"id":"05","nome":"SCBN05","titulo":"Inspiração: Scandal By Night (JEAN PAUL GAULTIER)","texto":["Família olfativa: Oriental Floral.","Notas de saída: Mel, Cítricos e Laranja Amarga.","Notas de corpo: Tuberosa, Nardo do Himalaia, Cereja, Flor de Laranjeira e Pêra.","Notas de fundo: Fava Tonka, Patchouli ou Oriza, Sândalo, Madeira de âmbar, Baunilha e Almíscar branco."]},
+{"id":"06","nome":"BRBY06","titulo":"Inspiração: Burberry Her Elixir (BURBERRY)","texto":["Família olfativa: Frutado.","Notas de saída: Morango e Amora.","Notas de corpo: Jasmin.","Notas de fundo: Baunilha, Âmbar e Sândalo."]},
+{"id":"08","nome":"LBRE08","titulo":"Inspiração: Libre (YVES SAINT LAURENT)","texto":["Família olfativa: Floral Cítrico.","Notas de saída: Lavanda, Tangerina, Cassis e Petitgrain.","Notas de corpo: Lavanda, Flor de Laranjeira e Jasmim.","Notas de fundo: Baunilha do Madagascar, Ambargris, Almíscar e Cedro."]},
+{"id":"10","nome":"BRT010","titulo":"Inspiração: Bright Crystal Absolu (VERSACE)","texto":["Família olfativa: Floral Frutado.","Notas de saída: Romã, Yuzu e Notas Aquáticas.","Notas de corpo: Peônia, Framboesa, Lótus e Magnólia.","Notas de fundo: Almíscar, Mogno e Âmbar."]},
+{"id":"11","nome":"CKON11","titulo":"Inspiração: CK One Essence (CALVIN KLEIN)","texto":["Família olfativa: Citrico.","Notas de saída: Chá Branco, Bergamota, Laranja Sanguínea e Pimenta Preta.","Notas de corpo: Chá Verde, Hortelã e Gerânio.","Notas de fundo: Almíscar, Sândalo Australiano, Incenso e Musgo."]},
+{"id":"12","nome":"TRQS12","titulo":"Inspiração: Versace Pour Femme Dylan Turquoise (VERSACE)","texto":["Família olfativa: Floral Frutado.","Notas de saída: Limão, Mandarina e Pimenta Rosa.","Notas de corpo: Goiaba, Frésia, Jasmim e Cassis.","Notas de fundo: Clearwood®, Almíscar e Cedro."]},
+{"id":"13","nome":"PEAR13","titulo":"Inspiração: English Pear & Fresia (JOE MALONE LONDON)","texto":["Família olfativa: Chipre Frutado.","Notas de saída: Pera e Melão.","Notas de corpo: Frésia e Rosa.","Notas de fundo: Almíscar, Patchouli, Ruibarbo e Âmbar."]},
+{"id":"14","nome":"LNUT14","titulo":"Inspiração: La Nuit Tresor (LANCÔME)","texto":["Família olfativa: Âmbar Baunilha.","Notas de saída: Pêra, Bergamota e Mexerica.","Notas de corpo: Orquídea baunília, Rosa negra, Maracujá e Morango.","Notas de fundo: Patchouli, Papiro, Incenso, Pralinê, Baunilha e Caramelo."]},
+{"id":"15","nome":"LBRI15","titulo":"Inspiração: Libre Intense (YVES SAINT LAURENT)","texto":["Família olfativa: Oriental Fougére.","Notas de saída: Lavanda, Mandarina e Bergamota.","Notas de corpo: Lavanda, Flor de Laranjeira Tunisiana e Jasmim Sambac.","Notas de fundo: Baunilha de Madagascar, Fava Tonka e Vetiver."]},
+{"id":"16","nome":"LVST16","titulo":"Inspiração: Love Story Eau Sensuelle (CHLOÉ)","texto":["Família olfativa: Floral.","Notas de saída: Limão siciliano, Yuzu, Pêra e Flor de laranjeira.","Notas de corpo: Flor de maracujá e Heliotrópio.","Notas de fundo: Cedro, Âmbar, Almíscar e Sândalo."]},
+{"id":"18","nome":"ARMC18","titulo":"Inspiração: Armani Code (GIORGIO ARMANI)","texto":["Família olfativa: Floral.","Notas de saída: Limão e Bergamota.","Notas de corpo: Anis Estrelado, Flor de Oliveira e Madeira Guaiac.","Notas de fundo: Couro, Fava Tonka e Tabaco."]},
+{"id":"20","nome":"BCRT20","titulo":"Inspiração: Baccarat Rouge 540 (MAISON FRANCIS KURKDJIAN)","texto":["Família olfativa: Âmbar Floral.","Notas de saída: Açafrão e Jasmim.","Notas de corpo: Madeira de Âmbar e Âmbar Cinzento.","Notas de fundo: Resina de Abeto e Cedro."]},
+{"id":"21","nome":"BDCH21","titulo":"Inspiração: Bleu de Chanel (CHANEL)","texto":["Família olfativa: Amadeirado Aromático.","Notas de saída: Toranja, Limão, Hortelã e Pimenta Rosa.","Notas de corpo: Gengibre, Noz-moscada, Jasmim e Iso E Super.","Notas de fundo: Incenso, Vetiver, Cedro, Sândalo e Patchouli."]},
+{"id":"22","nome":"INVI22","titulo":"Inspiração: Invictus Victory (PACO RABANNE)","texto":["Família olfativa: Âmbar.","Notas de saída: Pimenta Rosa e Limão.","Notas de corpo: Olíbano e Lavanda.","Notas de fundo: Baunilha, Fava Tonka e Âmbar."]},
+{"id":"24","nome":"PLBL24","titulo":"Inspiração: Polo Blue (RALPH LAUREN)","texto":["Família olfativa: Aromático Fougére.","Notas de saída: Melão, Tangerina e Pepino.","Notas de corpo: Manjericão, Sálvia e Gerânio.","Notas de fundo: Almíscar, Notas amadeiradas e Camurça."]},
+{"id":"25","nome":"SVGE25","titulo":"Inspiração: Sauvage Elixir (DIOR)","texto":["Família olfativa: Aromático.","Notas de saída: Canela, Noz-moscada, Cardamomo e Toranja.","Notas de corpo: Lavanda.","Notas de fundo: Alcaçuz, Sândalo, Âmbar e Vetiver."]},
+{"id":"27","nome":"SLVS27","titulo":"Inspiração: Silver Scent (JACQUES BOGART)","texto":["Família olfativa: Oriental Amadeirado.","Notas de saída: Flor de Laranjeira e Limão.","Notas de corpo: Lavanda, Cardamomo e Noz-moscada.","Notas de fundo: Fava Tonka, Madeira de Teca e Vetiver."]}
+];
 
 function renderPerfumes() {
     const grid = document.getElementById('perfumes-grid');
-
     PERFUMES.forEach(p => {
         const card = document.createElement('article');
         card.className = 'card';
         card.style.backgroundImage = `url('./IMAGENS/${p.id}.png')`;
-
         card.innerHTML = `
             <div class="card-content">
                 <div class="perfume-name">${p.nome}</div>
                 <div class="perfume-title">${p.titulo}</div>
                 <div class="perfume-text">${p.texto.join('\n')}</div>
-            </div>
-        `;
+            </div>`;
         grid.appendChild(card);
     });
 }
-
 renderPerfumes();
 </script>
 
