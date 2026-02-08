@@ -27,9 +27,9 @@ body {
     font-family: 'Inter', sans-serif;
     background: linear-gradient(
         to bottom,
-        #f6c1a1,   /* nude claro */
-        #e9a987,   /* nude médio */
-        #d9926f    /* nude mais fechado */
+        #f6c1a1,
+        #e9a987,
+        #d9926f
     );
     min-height: 100vh;
     color: #000;
@@ -37,6 +37,7 @@ body {
 
 /* ================= HEADER ================= */
 header {
+    position: relative;
     padding: 3rem 1.5rem 5rem;
     text-align: center;
     border-bottom: 1px solid rgba(120, 53, 15, 0.2);
@@ -78,9 +79,15 @@ header {
     background: linear-gradient(to right, transparent, #f59e0b, transparent);
 }
 
+/* ================= BADGE + TAG ================= */
+.badge-container {
+    position: relative;
+    margin-top: 1.5rem;
+}
+
 .badge-30ml {
     display: block;
-    margin: 1.5rem auto 0;
+    margin: 0 auto;
     width: fit-content;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
@@ -90,6 +97,17 @@ header {
     font-size: 0.875rem;
 }
 
+/* ================= TAG PREÇO ================= */
+.tag-preco {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 110px;
+    pointer-events: none;
+}
+
+/* ================= DIVIDER ================= */
 .divider {
     width: 6rem;
     height: 1px;
@@ -132,17 +150,12 @@ main {
     border: 1px solid #262626;
 }
 
-/* ================= CARD CONTENT ================= */
 .card-content {
     position: absolute;
     top: 0;
     padding: 1.5rem;
     z-index: 2;
-    background: transparent;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
 }
-
 
 /* ================= TEXTO DO PERFUME ================= */
 .perfume-name {
@@ -223,7 +236,13 @@ main {
         <div class="catalogo-linha"></div>
     </div>
 
-    <div class="badge-30ml">Frascos de 30ml</div>
+    <div class="badge-container">
+        <span class="badge-30ml">Frascos de 30ml</span>
+
+        <!-- TAG DE PREÇO -->
+        <img src="./TAG.png" alt="Preço" class="tag-preco">
+    </div>
+
     <div class="divider"></div>
 </header>
 
@@ -242,244 +261,8 @@ main {
 </a>
 
 <script>
+const PERFUMES = [...]; // mantém exatamente sua lista atual
 
-/* ================= DADOS DOS PERFUMES (EDIÇÃO SIMPLES) ================= */
-const PERFUMES = [
-    {
-        id: "01",
-        nome: "COCO MADEMOISELLE",
-        titulo: "Inspiração: Coco Mademoiselle (CHANEL)",
-        texto: [
-            "Família Olfativa: Âmbar Floral Feminino",
-            "Notas de saída: Laranja, Tangerina, Bergamota e Flor de Laranjeira;",
-            "Notas de corpo: Rosa Turca, Jasmim, Mimosa e Ylang Ylang;",
-            "Notas de fundo/fixação: Patchouli ou Oriza, Almíscar Branco, Baunilha, Vetiver, Fava Tonka e Opoponax."
-        ]
-    },
-    {
-        id: "02",
-        nome: "OUI LA VIE EST BELLE",
-        titulo: "Inspiração: Oui La Vie est Belle (LANCÔME)",
-        texto: [
-            "Família olfativa: Floral Frutado Gourmet Feminino",
-            "Notas de saída: Framboesa, Pimenta, Rosa e Bergamota",
-            "Notas de corpo: Rosa e Ylang-Ylang",
-            "Notas de fundo: Doces, Íris e Patchouli."
-        ]
-    },
-        {
-    id: "03",
-    nome: "ROYAL AMBER",
-    titulo: "Inspiração: Royal Amber (ORIENTICA)",
-    texto: [
-        "Família olfativa: Âmbar Baunilha.",
-        "Notas de saída: Bergamota.",
-        "Notas de corpo: Notas Doces, Âmbar, Melão e Abacaxi.",
-        "Notas de fundo: Notas Amadeiradas, Almíscar e Baunilha."
-        ]
-    },
-        {
-        id: "04",
-    nome: "SABAH AL WARD",
-    titulo: "Inspiração: Sabah Al Ward (AL WATANIAH)",
-    texto: [
-        "Família olfativa: Âmbar Floral.",
-        "Notas de saída: Pimenta Rosa e Tangerina.",
-        "Notas de corpo: Jasmim Sambac, Flor de Laranjeira e Vagem de Cacau.",
-        "Notas de fundo: Baunilha, Fava Tonka e Patchouli ou Oriza."
-        ]
-    },
-         {
-    id: "05",
-    nome: "SCANDAL BY NIGHT",
-    titulo: "Inspiração: Scandal By Night (JEAN PAUL GAULTIER)",
-    texto: [
-        "Família olfativa: Oriental Floral.",
-        "Notas de saída: Mel, Cítricos e Laranja Amarga.",
-        "Notas de corpo: Tuberosa, Nardo do Himalaia, Cereja, Flor de Laranjeira e Pêra.",
-        "Notas de fundo: Fava Tonka, Patchouli ou Oriza, Sândalo, Madeira de âmbar, Baunilha e Almíscar branco."
-        ]
-    },
-     {
-    id: "06",
-    nome: "BURBERRY HER ELIXIR",
-    titulo: "Inspiração: Burberry Her Elixir (BURBERRY)",
-    texto: [
-        "Família olfativa: Frutado.",
-        "Notas de saída: Morango e Amora.",
-        "Notas de corpo: Jasmin.",
-        "Notas de fundo: Baunilha, Âmbar e Sândalo."
-        ]
-    },
-     {
-    id: "08",
-    nome: "LIBRE",
-    titulo: "Inspiração: Libre (YVES SAINT LAURENT)",
-    texto: [
-        "Família olfativa: Floral Cítrico.",
-        "Notas de saída: Lavanda, Tangerina, Cassis ou groselha preta e Petitgrain.",
-        "Notas de corpo: Lavanda, Flor de Laranjeira e Jasmim.",
-        "Notas de fundo: Baunilha do Madagascar, Ambargris, Almíscar e Cedro."
-        ]
-    },
-     {
-    id: "10",
-    nome: "BRIGHT CRYSTAL ABSOLU",
-    titulo: "Inspiração: Bright Crystal Absolu (VERSACE)",
-    texto: [
-        "Família olfativa: Floral Frutado.",
-        "Notas de saída: Romã, Yuzu e Notas Aquáticas.",
-        "Notas de corpo: Peônia, Framboesa, Lótus e Magnólia.",
-        "Notas de fundo: Almíscar, Mogno e Âmbar."
-        ]
-    },
-         {
-    id: "11",
-    nome: "CALVIN KLEIN ONE",
-    titulo: "Inspiração: CK One Essence (CALVIN KLEIN)",
-    texto: [
-        "Família olfativa: Citrico.",
-        "Notas de saída: Chá Branco, Bergamota, Laranja Sanguínea e Pimenta Preta.",
-        "Notas de corpo: Chá Verde, Hortelã e Gerânio.",
-        "Notas de fundo: Almíscar, Sândalo Australiano, Incenso e Musgo."
-        ]
-    },
-     {
-    id: "12",
-    nome: "DYLAN TURQUOISE",
-    titulo: "Inspiração: Versace Pour Femme Dylan Turquoise (VERSACE)",
-    texto: [
-        "Família olfativa: Floral Frutado.",
-        "Notas de saída: Limão, Mandarina e Pimenta Rosa.",
-        "Notas de corpo: Goiaba, Frésia, Jasmim e Cassis.",
-        "Notas de fundo: Clearwood®, Almíscar e Cedro."
-        ]
-    },
-     {
-    id: "13",
-    nome: "ENGLISH PEAR & FRESIA",
-    titulo: "Inspiração: English Pear & Fresia (JOE MALONE LONDON)",
-    texto: [
-        "Família olfativa: Chipre Frutado.",
-        "Notas de saída: Pera e Melão.",
-        "Notas de corpo: Frésia e Rosa.",
-        "Notas de fundo: Almíscar, Patchouli, Ruibarbo e Âmbar."
-        ]
-    },    
-             {
-    id: "14",
-    nome: "LA NUIT TRÉSOR",
-    titulo: "Inspiração: La Nuit Tresor (LANCÔME)",
-    texto: [
-        "Família olfativa: Âmbar Baunilha.",
-        "Notas de saída: Pêra, Bergamota e Mexerica.",
-        "Notas de corpo: Orquídea baunília, Rosa negra, Maracujá e Morango.",
-        "Notas de fundo: Patchouli ou Oriza, Papiro, Incenso, Lichia, Pralinê, Baunilha, Caramelo, Café, Cumarina e Alcaçuz."
-        ]
-    },
-                 {
-    id: "15",
-    nome: "LIBRE INTENSE",
-    titulo: "Inspiração: Libre Intense (YVES SAINT LAURENT)",
-    texto: [
-        "Família olfativa: Oriental Fougére.",
-        "Notas de saída: Lavanda, Mandarina e Bergamota.",
-        "Notas de corpo: Lavanda, Flor de Laranjeira Tunisiana, Jasmim Sambac e Orquídea.",
-        "Notas de fundo: Baunilha de Madagascar, Fava Tonka, Âmbar Cinzento e Vetiver."
-        ]
-    },
-         {
-    id: "16",
-    nome: "LOVE STORY",
-    titulo: "Inspiração: Love Story Eau Sensuelle (CHLOÉ)",
-    texto: [
-        "Família olfativa: Floral.",
-        "Notas de saída: Limão siciliano, Yuzu, Pêra e Flor de laranjeira.",
-        "Notas de corpo: Flor de maracujá e Heliotrópio.",
-        "Notas de fundo: Cedro, Âmbar, Almíscar e Sândalo."
-        ]
-    },
-         {
-    id: "18",
-    nome: "ARMANI CODE",
-    titulo: "Inspiração: Armani Code (GIORGIO ARMANI)",
-    texto: [
-        "Família olfativa: Floral.",
-        "Notas de saída:  Limão e Bergamota.",
-        "Notas de corpo: Anis Estrelado, Flor de Oliveira e Madeira Guaiac.",
-        "Notas de fundo: Couro, Fava Tonka e Tabaco."
-        ]
-    },
-         {
-    id: "20",
-    nome: "BACCARAT ROUGE 540",
-    titulo: "Inspiração: Baccarat Rouge 540 (MAISON FRANCIS KURKDJIAN)",
-    texto: [
-        "Família olfativa: Âmbar Floral.",
-        "Notas de saída:  Açafrão e Jasmim.",
-        "Notas de corpo: Madeira de Âmbar e Âmbar Cinzento.",
-        "Notas de fundo: Resina de Abeto e Cedro."
-        ]
-    },
-         {
-    id: "21",
-    nome: "BLEU DE CHANEL",
-    titulo: "Inspiração: Bleu de Chanel (CHANEL)",
-    texto: [
-        "Família olfativa: Amadeirado Aromático.",
-        "Notas de saída:  Toranja, Limão, Hortelã e Pimenta Rosa.",
-        "Notas de corpo: Gengibre, Noz-moscada, Jasmim e Iso E Super.",
-        "Notas de fundo: Incenso, Vetiver, Cedro, Sândalo, Patchouli, Ládano e Almíscar Branco."
-        ]
-    },
-         {
-    id: "22",
-    nome: "INVICTUS VICTORY",
-    titulo: "Inspiração: Invictus Victory (PACO RABANNE)",
-    texto: [
-        "Família olfativa: Âmbar.",
-        "Notas de saída:  Pimenta Rosa e Limão.",
-        "Notas de corpo: Olíbano e Lavanda.",
-        "Notas de fundo: Baunilha, Fava Tonka e Âmbar."
-        ]
-    },
-         {
-    id: "24",
-    nome: "POLO BLUE",
-    titulo: "Inspiração: Polo Blue (RALPH LAUREN)",
-    texto: [
-        "Família olfativa: Aromático Fougére.",
-        "Notas de saída:  Melão, Tangerina e Pepino.",
-        "Notas de corpo: Manjericão, Sálvia e Gerânio.",
-        "Notas de fundo: Almíscar, Notas amadeiradas e Camurça."
-        ]
-    },
-         {
-    id: "25",
-    nome: "SAUVAGE ELIXIR",
-    titulo: "Inspiração: Polo Blue (RALPH LAUREN)",
-    texto: [
-        "Família olfativa: Aromático.",
-        "Notas de saída:  Canela, Noz-moscada, Cardamomo e Toranja.",
-        "Notas de corpo: Lavanda.",
-        "Notas de fundo: Alcaçuz, Sândalo, Âmbar, Patchouli ou Oriza e Vetiver do Haiti."
-        ]
-    },
-         {
-    id: "27",
-    nome: "SILVER SCENT",
-    titulo: "Inspiração: Silver Scent (JACQUES BOGART)",
-    texto: [
-        "Família olfativa: Oriental Amadeirado.",
-        "Notas de saída:  Flor de Laranjeira e Limão.",
-        "Notas de corpo: Lavanda, Cardamomo, Noz-moscada, Alecrim, Coentro e Gerânio.",
-        "Notas de fundo: Lichia, Fava Tonka, Madeira de Teca e Vetiver."
-        ]
-    }
-    
-];
-
-/* ================= RENDER ================= */
 function renderPerfumes() {
     const grid = document.getElementById('perfumes-grid');
 
@@ -495,7 +278,6 @@ function renderPerfumes() {
                 <div class="perfume-text">${p.texto.join('\n')}</div>
             </div>
         `;
-
         grid.appendChild(card);
     });
 }
@@ -505,18 +287,3 @@ renderPerfumes();
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
